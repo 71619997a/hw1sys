@@ -10,7 +10,7 @@ int myStrlen(const char* str) {
   return len;
 }
 
-void myStrncpy(char* dest, const char* src, int n) {
+char *myStrncpy(char* dest, const char* src, int n) {
   int i;
   int stop = myStrlen(src);
   for(i = 0; i < n; i++) {
@@ -22,11 +22,13 @@ void myStrncpy(char* dest, const char* src, int n) {
     }
   }
   dest[n] = 0;
+  return dest;
 }
 
-void myStrncat(char* dest, const char* src, int n) {
+char *myStrncat(char* dest, const char* src, int n) {
   int start = myStrlen(dest);
   myStrncpy(dest + start, src, n);
+  return dest;
 }
 
 int myStrcmp(const char* str1, const char* str2) {
