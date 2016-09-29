@@ -71,5 +71,6 @@ int main() {
   myStrncat(str1, str, 4);
   printf("\napp first 4 of str to str1: %s", str1);
   printf("\n%s cmp %s -> %d", str1, str3, myStrcmp(str1, str3));
-  printf("\nstr from d on: %s", myStrchr(str, 'd'));
+  printf("\nstr from d on: %s\n", myStrchr(str, 'd'));
+  return 0;
 }
