@@ -59,18 +59,18 @@ char *myStrchr(char *str, char c) {
 }
 
 int main() {
-  char str[50] = "abcdef";
-  char str1[50] = "12345";
-  char str2[50];
-  char str3[50] = "12345abccf";
+  char s[50] = "abcdef";
+  char s1[50] = "12345";
+  char s2[50];
+  char s3[50] = "12345abccf";
   printf("start");
-  printf("\nlen:: str:%d, str1:%d", myStrlen(str), myStrlen(str1));
-  fflush(stdout);
-  myStrncpy(str2, str1, 3);
-  printf("\ncopy first 3 of str1: %s", str2);
-  myStrncat(str1, str, 4);
-  printf("\napp first 4 of str to str1: %s", str1);
-  printf("\n%s cmp %s -> %d", str1, str3, myStrcmp(str1, str3));
-  printf("\nstr from d on: %s\n", myStrchr(str, 'd'));
+  printf("\ns = %s\ns1 = %s\ns3 = %s", s, s1, s3);
+  printf("\nlen of s = %d, len of s1 = %d", myStrlen(s), myStrlen(s1));
+  
+  printf("\n\ncopy first 3 of %s to s2 -> %s\ns2 = %s", s1, myStrncpy(s2, s1, 3), s2);
+  
+  printf("\n\ncat first 4 of %s to s1 -> %s\ns1 = %s", s, myStrncat(s1, s, 4), s1);
+  printf("\n\n%s cmp %s -> %d\n%s cmp %s -> %d\n%s cmp %s -> %d", s1, s3, myStrcmp(s1, s3), s3, s1, myStrcmp(s3, s1), s2, s2, myStrcmp(s2, s2));
+  printf("\n\n%s from d on: %s\n%s from x on: %s\n", s, myStrchr(s, 'd'), s, myStrchr(s, 'x'));
   return 0;
 }
